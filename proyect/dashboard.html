@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard de Finanzas</h1>
+    <div id="presupuesto">
+        <h2>Presupuesto Mensual</h2>
+        <input type="number" id="presupuesto-mensual" placeholder="Presupuesto" oninput="actualizarPresupuesto()" />
+        <p>Disponible: <span id="disponible">0</span></p>
+        <p>Gastado: <span id="gastado">0</span></p>
+    </div>
+    <div id="agregar-gasto">
+        <h3>Agregar Gasto</h3>
+        <input type="text" id="descripcion-gasto" placeholder="Descripción" required>
+        <input type="number" id="monto-gasto" placeholder="Monto" required>
+        <button onclick="agregarGasto()">Agregar Gasto</button>
+    </div>
+    <div id="transacciones"></div>
+    <button onclick="irAHome()">Volver a Home</button>
+    <script src="script.js"></script>
+</body>
+</html>

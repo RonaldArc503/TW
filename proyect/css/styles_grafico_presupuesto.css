@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Título principal */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+    font-size: 2.5rem;
+}
+
+.container-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px; /* Espaciado entre columnas */
+    padding: 20px;
+}
+
+.section {
+    border: 1px solid #bebbbb;
+    padding: 40px;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el flexbox dentro de presupuesto */
+.presupuesto-flexbox {
+    display: flex; /* Mostrar en horizontal */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    gap: 20px; /* Espacio entre gráfico y datos */
+}
+
+/* Estilos para el gráfico del presupuesto */
+#grafico-presupuesto {
+    max-width: 200px; /* Ajustar tamaño máximo del gráfico */
+    flex: 1; /* Que el gráfico ocupe un espacio balanceado */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Estilos para los datos del presupuesto */
+.presupuesto-datos {
+    flex: 1; /* Para que los datos ocupen el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Estilos de inputs y botones */
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Estilos para el botón general */
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover para botones */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo del botón de reset */
+.btn-reset {
+    background-color: #f44336;
+}
+
+.btn-reset:hover {
+    background-color: #d32f2f;
+}
+
+/* Mensaje de presupuesto excedido */
+#mensaje-presupuesto {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Lista de transacciones */
+#lista-transacciones {
+    margin-top: 15px;
+    padding: 0;
+    list-style-type: none;
+}
+
+#lista-transacciones div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 13px rgba(0, 0, 0, 0.1);
+}
+
+#lista-transacciones div strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 530px) {
+    /* Asegura que el flexbox del presupuesto se adapte en móviles */
+    .presupuesto-flexbox {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #grafico-presupuesto {
+        max-width: 100%; /* Permitir que el gráfico use todo el ancho */
+        margin-bottom: 20px; /* Añadir espacio debajo del gráfico */
+    }
+
+    .presupuesto-datos {
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Ajustar tamaños de fuentes y paddings si es necesario */
+    h1 {
+        font-size: 2rem; /* Reducir tamaño del título */
+    }
+
+    button {
+        width: 100%; /* Botones ocupan todo el ancho en móviles */
+    }
+
+    input[type="number"], input[type="text"], select {
+        width: 100%; /* Asegurarse de que los inputs ocupen todo el ancho */
+    }
+}

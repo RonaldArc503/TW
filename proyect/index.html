@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles_grafico_presupuesto.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-nav.css">
+    <link rel="icon" href="/path-to-your-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>Dashboard</title>
+    <!-- Agregar referencia a Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+</head>
+<body>
+    <!-- nav -->
+
+    <header class="header1">
+        <div class="container">
+          <input type="checkbox" name="" id="check" />
+    
+          <div class="logo-container">
+            <h3 class="logo">TASKLY UP</h3>
+          </div>
+    
+          <div class="nav-btn">
+            <div class="nav-links">
+              <ul>
+                <li class="nav-link" style="--i: 0.6s">
+                  <a href="/">Inicio</a>
+                </li>
+                <li class="nav-link" style="--i: 0.85s">
+                  <a href="/task.html">Mis Tareas<i class="fas fa-caret-down"></i></a>
+                </li>
+                <li class="nav-link" style="--i: 1.1s">
+                  <a href="/claves.html">Mis Contraseña<i class="fas fa-caret-down"></i></a>
+                </li>
+                <li class="nav-link" style="--i: 1.35s">
+                  <a href="/">Mas</a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="log-sign" style="--i: 1.8s">
+              
+            </div>
+          </div>
+    
+          <div class="ventana-menu-container">
+            <div class="ventana-menu">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </header>
+<!-- Fin nav -->
+
+    <h1>Dashboard de Finanzas</h1>
+    
+    <div class="container-groups">
+        <div id="presupuesto" class="section">
+            <h2>Presupuesto Mensual</h2>
+            <div class="presupuesto-flexbox"> <!-- Contenedor flex para gráfico y datos -->
+                <div class="presupuesto-datos">
+                    <input type="number" id="presupuesto-mensual" placeholder="Presupuesto" oninput="actualizarPresupuesto()" />
+                    <p>Presupuesto: <span id="presupuestoMensual">0</span></p>
+                    <p>Disponible: <span id="disponible">0</span></p>
+                    <p>Gastado: <span id="gastado">0</span></p>
+                </div>
+                <div id="grafico-presupuesto">
+                    <canvas id="chartPresupuesto"></canvas>
+                </div>
+            </div>
+    
+            <div id="mensaje-presupuesto" style="display:none; color: red; font-weight: bold;">
+                Has excedido el presupuesto.
+            </div>
+            <button id="togglePresupuestoBtn">Difinir Presupuesto</button>
+            <br>
+            <br>
+            <button class="btn-reset" onclick="resetearDatos()">Resetear Datos</button>
+        </div>
+    
+        <div id="agregar-gasto" class="section">
+            <h3>Agregar Gasto</h3>
+            <input type="text" id="descripcion-gasto" placeholder="Descripción" required>
+            <input type="number" id="monto-gasto" placeholder="Monto" required>
+            <select id="tipo-gasto">
+                <option value="comida">Comida</option>
+                <option value="casa">Casa</option>
+                <option value="ahorro">Ahorro</option>
+                <option value="universidad">Universidad</option>
+                <option value="transporte">Transporte</option>
+                <option value="subscripciones">Subscripciones</option>
+                <option value="gastos varios">Gastos Varios</option>
+                <option value="salud">Salud</option>
+                <option value="agua">Agua</option>
+                <option value="electricidad">Electricidad</option>
+            </select>
+            <button class="btn-add" onclick="agregarGasto()">Agregar Gasto</button>
+        </div>
+    
+        <div id="transacciones" class="section">
+            <h3>Transacciones</h3>
+            <div id="lista-transacciones"></div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
